@@ -13,7 +13,7 @@ module Sprinkle
       
       # Checks to make sure the ruby version exists in rvm.
       def has_rvm_ruby(ruby_version)
-        @commands << "rvm list | grep #{ruby_version}"
+        @commands << "echo 'bypass sudo'; rvm list | grep #{ruby_version}"
       end
     end
   end

@@ -18,8 +18,8 @@ module Sprinkle
       # Checks if a gem exists by calling "sudo gem list" and grepping against it.
       def has_gem(name, version=nil, rvm=nil)
         version = version.nil? ? '' : "--version '#{version}'"
-        rvm = rvm.nil? ? '' : "echo 'ignore sudo' && rvm #{rvm}"
-        @commands << "#{rvm} gem list '#{name}' --installed #{version} > /dev/null"
+        rvm = rvm.nil? ? '' : "rvm #{rvm}"
+        @commands << "echo 'ignore sudo' && #{rvm} gem list '#{name}' --installed #{version} > /dev/null"
       end
     end
   end

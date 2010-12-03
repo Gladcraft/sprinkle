@@ -50,7 +50,7 @@ module Sprinkle
 
         def install_commands #:nodoc:
           cmd =  "echo 'bypass sudo' && "
-          cmd << 'rvmsudo ' if rvm
+          cmd << 'rvmsudo ' if rvmsudo
           cmd << "gem install #{gem}"
           cmd << " --version '#{version}'" if version
           cmd << " --source #{source}" if source
